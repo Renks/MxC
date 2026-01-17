@@ -218,6 +218,12 @@ class ModalSetup:
 
     def generate_yaml_config(self):
         """Generate extra_model_paths.yaml from config.ini"""
+        if self.project_dir / "extra_model_paths.yaml".exists():
+            print("\n" + "=" * 60)
+            print("⚙️  YAML CONFIGURATION ALREADY EXISTS")
+            print("=" * 60)
+            print("✅ extra_model_paths.yaml already exists, skipping generation.")
+            return
         print("\n" + "=" * 60)
         print("⚙️  GENERATING YAML CONFIGURATION")
         print("=" * 60)
