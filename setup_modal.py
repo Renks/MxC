@@ -18,8 +18,6 @@ except ImportError:
     print("Error: Required modules not found. Make sure you're in the project root directory.")
     sys.exit(1)
 
-exit()
-
 class ModalSetup:
     """Handles the complete setup process for Modal × ComfyUI."""
 
@@ -33,9 +31,8 @@ class ModalSetup:
         # Check if .env exists and create if not
         env_file = self.project_dir / ".env"
         if not env_file.exists():
-            print("⚠ .env file not found. Creating from template...")
+            print("⚠️ .env file not found. Creating from template...")
             self.setup_env_file()
-            return
         
         try:
             loader = ConfigLoader(
@@ -104,6 +101,7 @@ class ModalSetup:
             return
 
         print("Opening browser for authentication...")
+        print(f"Manually run 'modal setup' if the browser does not open automatically.")
         try:
             subprocess.run(["modal", "setup"], check=True)
             print("✓ Modal authentication successful")
@@ -341,7 +339,7 @@ CIVITAI_API_TOKEN = "your_civitai_token_here"
         print("\n")
         print("╔" + "=" * 58 + "╗")
         print("║" + " " * 58 + "║")
-        print("║" + "  🚀 Modal × ComfyUI Setup Script".center(58) + "║")
+        print("║" + "  🚀 Modal × ComfyUI Setup Script".center(57) + "║")
         print("║" + " " * 58 + "║")
         print("╚" + "=" * 58 + "╝")
 
@@ -365,7 +363,7 @@ CIVITAI_API_TOKEN = "your_civitai_token_here"
             self.generate_yaml_config()
 
             # Step 7: Setup .env file
-            self.setup_env_file()
+            # self.setup_env_file() # Already called in load_config if missing
 
             # Step 8: Verify setup
             if self.verify_setup():
