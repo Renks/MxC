@@ -23,6 +23,7 @@ VOLUME_NAME = str(cfg["filesystem"]["volume_name"])
 VOLUME_MOUNT_LOCATION = str(cfg["filesystem"]["volume_mount_location"])
 COMFYUI_DIR = str(cfg["filesystem"]["comfyui_dir"])
 CUSTOM_NODES_DIR = str(cfg["filesystem"]["custom_nodes_dir"])
+CUSTOM_OUTPUT_DIR = str(cfg["filesystem"]["custom_output_dir"]) # "/root/per_comfy-storage/output"
 GPU_TYPE = str(cfg["resources"]["gpu_type"]) or None
 CPU = cfg["resources"]["cpu"]
 MEMORY = cfg["resources"]["memory"]
@@ -30,7 +31,6 @@ MAX_CONTAINERS = cfg["resources"]["max_containers"]
 SCALEDOWN_WINDOW = cfg["resources"]["scaledown_window"]
 TIMEOUT = cfg["resources"]["timeout"]
 MAX_INPUTS = cfg["resources"]["max_inputs"]
-CUSTOM_OUTPUT_DIR = str(cfg["resources"]["custom_output_dir"]) # "/root/per_comfy-storage/output"
 
 def debug_print_config_and_exit():
     """Utility function to print configuration and exit."""
