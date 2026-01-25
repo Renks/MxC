@@ -348,6 +348,11 @@ The required directory structure is automatically generated upon the successful 
     <br />
     Repeat for more models. You can also use `wget` utility to download `loras` and other files in their appropriate folders.
 
+  
+3. **Sync Changes (Important!)**
+
+    Run `sync` command once you're done to save changes and then `exit`.
+
 ---
 
 ## 🎮 Usage
